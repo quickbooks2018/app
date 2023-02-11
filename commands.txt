@@ -29,10 +29,22 @@ kubectl rollout status deployment app-cloudgeeks
 
 # Requirement
 
-############################################################################################
-kubectl rollout history deployment <deployment_name> --output=yaml | grep "image:\|revision:"
-
-kubectl rollout history deployment nginx --output=yaml | grep "image:\|revision:"
+# Create a Deployment
 ####################################################################################################
 kubectl create deployment nginx --image=nginx:stable --namespace=test --replicas=3 -o yaml --dry-run
 #####################################################################################################
+
+# Update a Deployment
+###################################################
+EDITOR=vim kubectl edit deployment/nginx -n default
+###################################################
+
+# Deployment History
+#################################################################################
+kubectl rollout history deployment/nginx --output=yaml | grep "image:\|revision:"
+##################################################################################
+
+# Rollback to the desired revision using the command
+#####################################################
+kubectl rollout undo deployment/nginx --to-revision=1
+#####################################################
