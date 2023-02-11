@@ -31,5 +31,8 @@ kubectl rollout status deployment app-cloudgeeks
 
 ############################################################################################
 kubectl rollout history deployment <deployment_name> --output=yaml | grep "image:\|revision:"
+
 kubectl rollout history deployment app-cloudgeeks --output=yaml | grep "image:\|revision:"
 ############################################################################################
+kubectl create deployment nginx --image=nginx:stable --namespace=test --dry-run -o yaml
+#######################################################################################
