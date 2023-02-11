@@ -63,7 +63,7 @@ spec:
         - name: cloudgeeks
           securityContext:
             {}
-          image: "quickbooks2018/cloudgeeks:green"
+          image: "quickbooks2018/green:latest"
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
