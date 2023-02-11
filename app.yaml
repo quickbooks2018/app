@@ -1,16 +1,4 @@
 ---
-# Source: cloudgeeks/templates/serviceaccount.yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: app-cloudgeeks
-  namespace: default
-  labels:
-    app.kubernetes.io/name: cloudgeeks
-    app.kubernetes.io/instance: app
-    
-    
----
 # Source: cloudgeeks/templates/service.yaml
 apiVersion: v1
 kind: Service
