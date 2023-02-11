@@ -24,3 +24,12 @@ kubectl rollout status deployment <deployment_name>
 
 kubectl rollout status deployment app-cloudgeeks
 
+
+
+
+# Requirement
+
+############################################################################################
+kubectl rollout history deployment <deployment_name> --output=yaml | grep "image:\|revision:"
+kubectl rollout history deployment app-cloudgeeks --output=yaml | grep "image:\|revision:"
+############################################################################################
